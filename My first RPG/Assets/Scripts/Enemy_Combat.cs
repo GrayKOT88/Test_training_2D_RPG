@@ -2,13 +2,20 @@ using UnityEngine;
 
 public class Enemy_Combat : MonoBehaviour
 {
-    [SerializeField] private int damage = 1;
+    [SerializeField] private int _damage = 1;
+    [SerializeField] private Transform _attackPoint;
+    [SerializeField] private float _weaponRange;
+    [SerializeField] private float _knockbackForce;
+    [SerializeField] private float _stunTime;
+    [SerializeField] private LayerMask _playerLayer;       
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void Attack()
     {
-        if (collision.gameObject.tag == "Player")
+        Collider2D[] hits = Physics2D.OverlapCircleAll(_attackPoint.position, _weaponRange, _playerLayer);
+        if (hits.Length > 0 )
         {
-            collision.gameObject.GetComponent<PlayerHealth>().ChangeHealth(-damage);
+            hits[0].GetComponent<PlayerHealth>().ChangeHealth(-_damage);
+            hits[0].GetComponent<PlayerMovment>().Knockback(transform, _knockbackForce, _stunTime);
         }
     }
 }
