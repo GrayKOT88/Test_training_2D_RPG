@@ -2,8 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 public class PlayerMovment : MonoBehaviour
-{
-    [SerializeField] private float _speed = 5f;
+{    
     [SerializeField] private Rigidbody2D _rb;
     [SerializeField] private Animator _animator;
     private int _facingDirection = 1;
@@ -34,7 +33,7 @@ public class PlayerMovment : MonoBehaviour
             _animator.SetFloat("horizontal", Mathf.Abs(horizontal));
             _animator.SetFloat("vertical", Mathf.Abs(vertical));
 
-            _rb.velocity = new Vector2(horizontal, vertical) * _speed;
+            _rb.velocity = new Vector2(horizontal, vertical) * StatsManager.Instance.speed;
         }
     }
 

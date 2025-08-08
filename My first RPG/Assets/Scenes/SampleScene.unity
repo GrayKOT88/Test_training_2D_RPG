@@ -585,6 +585,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &241963832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 241963833}
+  m_Layer: 6
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &241963833
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241963832}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1709642755}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &385538224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1687,6 +1718,58 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &912122165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912122167}
+  - component: {fileID: 912122166}
+  m_Layer: 0
+  m_Name: StatsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &912122166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912122165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04f5b847c6e72c143985a29021d03d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  weaponRange: 0.7
+  knockbackForce: 20
+  knockbackTime: 0.15
+  stunTime: 0.2
+  speed: 5
+  maxHealth: 20
+  currentHealth: 20
+--- !u!4 &912122167
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912122165}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &993331228
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,7 +2546,7 @@ Tilemap:
       - {fileID: -1719489998, guid: e6c41359a2262fb4186be6f40a9d0c1e, type: 3}
       - {fileID: 419599718, guid: e6c41359a2262fb4186be6f40a9d0c1e, type: 3}
       - {fileID: -850368271, guid: e6c41359a2262fb4186be6f40a9d0c1e, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: 8, y: 0, z: 0}
@@ -3175,7 +3258,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 241963833}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1709642756
@@ -3252,7 +3336,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62e1efdac0dfcc64fb682009b4fc0e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 5
   _rb: {fileID: 1709642756}
   _animator: {fileID: 1709642759}
   _player_Combat: {fileID: 1709642761}
@@ -3289,8 +3372,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a19f7595268a1a4ea26d4cf053a9520, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth: 10
-  _maxHealth: 10
   _healthText: {fileID: 74149638}
   _healthTextAnim: {fileID: 74149640}
 --- !u!114 &1709642761
@@ -3305,6 +3386,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f164238a4661c742988a67e5088b3ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _attackPoint: {fileID: 241963833}
+  _enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
   _animator: {fileID: 1709642759}
   _cooldown: 2
 --- !u!1 &1714538225
@@ -4394,8 +4479,10 @@ GameObject:
   - component: {fileID: 1897152513}
   - component: {fileID: 1897152512}
   - component: {fileID: 1897152514}
-  m_Layer: 0
-  m_Name: Torch_Red_0
+  - component: {fileID: 1897152515}
+  - component: {fileID: 1897152516}
+  m_Layer: 7
+  m_Name: Enemy_Torch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4625,6 +4712,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1897152515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897152506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ba3172d8b82d34e848fb6fc07c1a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _currentHealth: 5
+  _maxHealth: 5
+--- !u!114 &1897152516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1897152506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44096c9422e45dd40badeef4cd0fed2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1909319010
 GameObject:
   m_ObjectHideFlags: 0
@@ -4733,8 +4846,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 440807115}
   - {fileID: 1714538226}
-  - {fileID: 1709642755}
   - {fileID: 993331230}
+  - {fileID: 1709642755}
   - {fileID: 1897152510}
   - {fileID: 1909319014}
   - {fileID: 1327451177}
+  - {fileID: 912122167}
