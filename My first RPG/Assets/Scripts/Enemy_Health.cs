@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Enemy_Health : MonoBehaviour
 {
+    public int expReward = 3;
+    public delegate void MonsterDefeated(int exp);
+    public static event MonsterDefeated OnMonsterDefeated;
+
     [SerializeField] private int _currentHealth;
     [SerializeField] private int _maxHealth;    
 
@@ -20,6 +24,7 @@ public class Enemy_Health : MonoBehaviour
         }
         else if (_currentHealth <= 0)
         {
+            OnMonsterDefeated(expReward);
             Destroy(gameObject);
         }
     }
