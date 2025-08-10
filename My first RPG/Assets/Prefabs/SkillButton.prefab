@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 4100311778658304397}
   - component: {fileID: 5541411881222657786}
   - component: {fileID: 1107715546523436580}
+  - component: {fileID: 1451419458082336849}
   m_Layer: 0
   m_Name: SkillButton
   m_TagString: Untagged
@@ -407,3 +408,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1451419458082336849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9041167542117381689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1d103922dc295b4682e8d808c8d003f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillSO: {fileID: 0}
+  currentLevel: 0
+  isUnlocked: 0
+  skillIcon: {fileID: 3447619854247766106}
+  skillButton: {fileID: 1107715546523436580}
+  skillLevelText: {fileID: 3487743465872637286}
