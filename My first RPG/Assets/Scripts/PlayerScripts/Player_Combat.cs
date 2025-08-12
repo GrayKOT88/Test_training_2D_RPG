@@ -41,9 +41,9 @@ public class Player_Combat : MonoBehaviour
         _animator.SetBool("isAttacking", false);
     }
 
-    private void OnDrawGizmosSelected()
+    /*private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(_attackPoint.position, StatsManager.Instance.weaponRange);
-    }
+    }*/
 }

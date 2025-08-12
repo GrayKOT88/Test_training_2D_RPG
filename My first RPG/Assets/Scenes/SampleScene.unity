@@ -2921,6 +2921,37 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &520594226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 520594227}
+  m_Layer: 6
+  m_Name: LaunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &520594227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520594226}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1709642755}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &527083801
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,7 +3818,7 @@ GameObject:
   - component: {fileID: 723001384}
   - component: {fileID: 723001383}
   - component: {fileID: 723001382}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision_High
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4190,7 +4221,7 @@ GameObject:
   - component: {fileID: 772059498}
   - component: {fileID: 772059497}
   - component: {fileID: 772059499}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collision_Low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8221,6 +8252,7 @@ GameObject:
   - component: {fileID: 1709642758}
   - component: {fileID: 1709642760}
   - component: {fileID: 1709642761}
+  - component: {fileID: 1709642762}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -8294,6 +8326,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 241963833}
+  - {fileID: 520594227}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1709642756
@@ -8426,6 +8459,22 @@ MonoBehaviour:
     m_Bits: 128
   _animator: {fileID: 1709642759}
   _cooldown: 2
+--- !u!114 &1709642762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709642753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aebc1f6f5ce2cd34384163913f18ca66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  launchPoint: {fileID: 520594227}
+  arrowPrefab: {fileID: 496015294802359377, guid: 0c63206c1aefdd34db2cfdf49398e092, type: 3}
+  shootCooldown: 0.5
+  anim: {fileID: 1709642759}
 --- !u!1001 &1711033115
 PrefabInstance:
   m_ObjectHideFlags: 0
