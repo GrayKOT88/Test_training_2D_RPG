@@ -7,6 +7,7 @@ public class PlayerMovment : MonoBehaviour
     [SerializeField] private Animator _animator;
     private int _facingDirection = 1;
     private bool _isKnockedBack;
+    public bool isShooting;
     [SerializeField] private Player_Combat _player_Combat;
 
     private void Update()
@@ -19,7 +20,11 @@ public class PlayerMovment : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_isKnockedBack == false)
+        if (isShooting)
+        {
+            _rb.velocity = Vector2.zero;
+        }
+        else if (_isKnockedBack == false)
         {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
