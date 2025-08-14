@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e0bfbed027026c4f9819c01b934214e, type: 3}
-  m_Name: Mushroom
+  m_Name: Steak
   m_EditorClassIdentifier: 
-  itemName: Mushroom
-  itemDescription: It's an item... it mushes?
-  icon: {fileID: 21300000, guid: 35c890378d201a94bb7825ba4500fcdf, type: 3}
+  itemName: Steak
+  itemDescription: 
+  icon: {fileID: 21300000, guid: 41597aaefe45ca144a4fe7cd53bc9eb1, type: 3}
   isGold: 0
-  currentHealth: 5
+  currentHealth: 0
   maxHealth: 0
   speed: 0
   damage: 0
