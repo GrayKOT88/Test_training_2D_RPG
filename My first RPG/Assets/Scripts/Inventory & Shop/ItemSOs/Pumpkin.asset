@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Pumpkin
   itemDescription: 
-  icon: {fileID: 21300000, guid: aace50815a3eb6b4f849872455919341, type: 3}
+  icon: {fileID: 1664375245, guid: aace50815a3eb6b4f849872455919341, type: 3}
   isGold: 0
   currentHealth: 0
   maxHealth: 0
