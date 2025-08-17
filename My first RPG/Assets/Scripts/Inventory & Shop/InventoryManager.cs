@@ -37,7 +37,7 @@ public class InventoryManager : MonoBehaviour
         }
         foreach (var slot in itemSlots)
         {
-            if (slot.ItemSO == itemSO && slot.quantity < itemSO.stackSize)
+            if (slot.itemSO == itemSO && slot.quantity < itemSO.stackSize)
             {
                 int availablesSpace = itemSO.stackSize - slot.quantity;
                 int amountToAdd = Mathf.Min(availablesSpace, quantity);
@@ -50,10 +50,10 @@ public class InventoryManager : MonoBehaviour
         }
         foreach (var slot in itemSlots)
         {
-            if (slot.ItemSO == null)
+            if (slot.itemSO == null)
             {
                 int amountToAdd = Mathf.Min(itemSO.stackSize, quantity);
-                slot.ItemSO = itemSO;
+                slot.itemSO = itemSO;
                 slot.quantity = quantity;
                 slot.UpdateUI();
                 return;
@@ -65,11 +65,11 @@ public class InventoryManager : MonoBehaviour
 
     public void DropItem(InventorySlot slot)
     {
-        DropLoot(slot.ItemSO, 1);
+        DropLoot(slot.itemSO, 1);
         slot.quantity--;
         if(slot.quantity <= 0)
         {
-            slot.ItemSO = null;
+            slot.itemSO = null;
         }
         slot.UpdateUI();
     }
@@ -82,13 +82,13 @@ public class InventoryManager : MonoBehaviour
 
     public void UseItem(InventorySlot slot)
     {
-        if (slot.ItemSO != null && slot.quantity >= 0)
+        if (slot.itemSO != null && slot.quantity >= 0)
         {
-            useItem.ApplyItemEffects(slot.ItemSO);
+            useItem.ApplyItemEffects(slot.itemSO);
             slot.quantity--;
             if (slot.quantity <= 0)
             {
-                slot.ItemSO = null;
+                slot.itemSO = null;
             }
             slot.UpdateUI();
         }

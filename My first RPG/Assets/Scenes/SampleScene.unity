@@ -3596,6 +3596,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098467734}
     m_Modifications:
+    - target: {fileID: -6378580089528167623, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1483385847}
     - target: {fileID: 5626186457884655128, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
       propertyPath: m_Name
       value: ShopSlot (1)
@@ -4640,7 +4644,7 @@ MonoBehaviour:
   - {fileID: 1424888165}
   - {fileID: 1187320062}
   useItem: {fileID: 644801375}
-  gold: 0
+  gold: 10
   goldText: {fileID: 1068617477}
   lootPrefab: {fileID: 6447186508526293727, guid: 17238c22dcfa34848b8ec858c299e267, type: 3}
   player: {fileID: 1709642755}
@@ -5177,7 +5181,6 @@ GameObject:
   - component: {fileID: 758576193}
   - component: {fileID: 758576195}
   - component: {fileID: 758576194}
-  - component: {fileID: 758576196}
   m_Layer: 5
   m_Name: ShopPanel
   m_TagString: Untagged
@@ -5245,32 +5248,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758576192}
   m_CullTransparentMesh: 1
---- !u!114 &758576196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 758576192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a5a000976323b24993190ace78dd8e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopItems:
-  - itemSO: {fileID: 11400000, guid: 7a07da3ded30260459dc79b63acea680, type: 2}
-    price: 2
-  - itemSO: {fileID: 11400000, guid: be6d971c6799a334d8ad58634d002f10, type: 2}
-    price: 5
-  shopSlots:
-  - {fileID: 2105322849220546362}
-  - {fileID: 548525088}
-  - {fileID: 1702365179}
-  - {fileID: 813083918}
-  - {fileID: 938341113}
-  - {fileID: 2145349235}
-  - {fileID: 1239652110}
-  - {fileID: 977742164}
 --- !u!1 &762552383
 GameObject:
   m_ObjectHideFlags: 0
@@ -5698,6 +5675,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098467734}
     m_Modifications:
+    - target: {fileID: -6378580089528167623, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1483385847}
     - target: {fileID: 5626186457884655128, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
       propertyPath: m_Name
       value: ShopSlot (3)
@@ -5886,6 +5867,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098467734}
     m_Modifications:
+    - target: {fileID: -6378580089528167623, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1483385847}
     - target: {fileID: 5626186457884655128, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
       propertyPath: m_Name
       value: ShopSlot (7)
@@ -6400,6 +6385,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098467734}
     m_Modifications:
+    - target: {fileID: -6378580089528167623, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1483385847}
     - target: {fileID: 5626186457884655128, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
       propertyPath: m_Name
       value: ShopSlot (4)
@@ -8305,6 +8294,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098467734}
     m_Modifications:
+    - target: {fileID: -6378580089528167623, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1483385847}
     - target: {fileID: 5626186457884655128, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
       propertyPath: m_Name
       value: ShopSlot (6)
@@ -10215,6 +10208,7 @@ GameObject:
   - component: {fileID: 1483385844}
   - component: {fileID: 1483385843}
   - component: {fileID: 1483385842}
+  - component: {fileID: 1483385847}
   m_Layer: 5
   m_Name: ShopCanvas
   m_TagString: Untagged
@@ -10317,6 +10311,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1483385847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483385841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5a000976323b24993190ace78dd8e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItems:
+  - itemSO: {fileID: 11400000, guid: 7a07da3ded30260459dc79b63acea680, type: 2}
+    price: 2
+  - itemSO: {fileID: 11400000, guid: be6d971c6799a334d8ad58634d002f10, type: 2}
+    price: 5
+  shopSlots:
+  - {fileID: 2105322849220546362}
+  - {fileID: 548525088}
+  - {fileID: 1702365179}
+  - {fileID: 813083918}
+  - {fileID: 938341113}
+  - {fileID: 2145349235}
+  - {fileID: 1239652110}
+  - {fileID: 977742164}
+  inventoryManager: {fileID: 644801374}
 --- !u!1 &1492942828
 GameObject:
   m_ObjectHideFlags: 0
@@ -10691,6 +10712,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098467734}
     m_Modifications:
+    - target: {fileID: -6378580089528167623, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1483385847}
     - target: {fileID: 5626186457884655128, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
       propertyPath: m_Name
       value: ShopSlot (5)
@@ -11116,6 +11141,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098467734}
     m_Modifications:
+    - target: {fileID: -6378580089528167623, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1483385847}
     - target: {fileID: 5626186457884655128, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
       propertyPath: m_Name
       value: ShopSlot (2)
@@ -16548,6 +16577,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2098467734}
     m_Modifications:
+    - target: {fileID: -6378580089528167623, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 1483385847}
     - target: {fileID: 5626186457884655128, guid: f16f0f0914f28c444b2a4ab478139acd, type: 3}
       propertyPath: m_Name
       value: ShopSlot
