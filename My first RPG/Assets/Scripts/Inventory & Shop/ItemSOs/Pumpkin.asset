@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Pumpkin
   m_EditorClassIdentifier: 
   itemName: Pumpkin
-  itemDescription: 
+  itemDescription: Large ripe pumpkin
   icon: {fileID: 1664375245, guid: aace50815a3eb6b4f849872455919341, type: 3}
   isGold: 0
-  currentHealth: 0
+  stackSize: 3
+  currentHealth: 5
   maxHealth: 0
   speed: 0
   damage: 0
