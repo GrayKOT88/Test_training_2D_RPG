@@ -10,17 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b74bc0fcaa2ebc4ca4151d4a5e64e0d, type: 3}
-  m_Name: Greeting with Bob
+  m_Name: Greeting with Bob_Tell me more
   m_EditorClassIdentifier: 
   lines:
   - speaker: {fileID: 11400000, guid: 73df1ef1b987dc34abafa97ca6b76027, type: 2}
-    text: Hello
-  - speaker: {fileID: 11400000, guid: 73df1ef1b987dc34abafa97ca6b76027, type: 2}
-    text: I heard you just released a new for Willard, talking about animation!
+    text: It's really awesome. Be sure to check it out.
   - speaker: {fileID: 11400000, guid: af336a27a6203d945afcdea710fa2957, type: 2}
-    text: Sure did! You should check it out, Bob!
-  options:
-  - optionText: Tell me more
-    nextDialogue: {fileID: 11400000, guid: c86e0eeb0a732ed4498f6446ecda9d2b, type: 2}
-  - optionText: No interested.
-    nextDialogue: {fileID: 11400000, guid: 30a84d6e64242d34298e880b9263607a, type: 2}
+    text: I'll do that.
+  options: []
