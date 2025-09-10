@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b74bc0fcaa2ebc4ca4151d4a5e64e0d, type: 3}
-  m_Name: Yellow_WontTalkToYou
+  m_Script: {fileID: 11500000, guid: 2c3f02fc88fdf7645964b6c73e417294, type: 3}
+  m_Name: The Sandy Beach
   m_EditorClassIdentifier: 
-  lines:
-  - speaker: {fileID: 11400000, guid: 8f71089faa0f70645860918f71200bfa, type: 2}
-    text: I won't talk to you unless you find my brother Blue.
-  options: []
-  requiredNPCs: []
+  locationID: Beach1_1
+  displayName: The Sandy Beach
