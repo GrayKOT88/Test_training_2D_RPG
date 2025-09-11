@@ -10,11 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b74bc0fcaa2ebc4ca4151d4a5e64e0d, type: 3}
-  m_Name: PurpleBob_StillNeedsYellow
+  m_Name: Purple Bob_Default_Greeting
   m_EditorClassIdentifier: 
   lines:
   - speaker: {fileID: 11400000, guid: 73df1ef1b987dc34abafa97ca6b76027, type: 2}
-    text: I see you've found Blue Bob! Please find Yellow as well.
+    text: Greeting.
   options: []
-  requiredNPCs:
-  - {fileID: 11400000, guid: 84eab9b5f87021646964c4f8cc1b0193, type: 2}
+  requiredNPCs: []
+  requiredLocations: []
+  requiredItems: []
+  removeAfterPlay: 0
+  removeTheseOnPlay: []

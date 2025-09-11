@@ -2,20 +2,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DialogueHistoryTrecker : MonoBehaviour
-{
-    public static DialogueHistoryTrecker Instance;
+{    
     private readonly HashSet<ActorSO> spokenNPCs = new HashSet<ActorSO>();
-
-    private void Awake()
-    {
-        if (Instance != null)
-        {
-            Destroy(gameObject);
-            return;
-        }
-        Instance = this;
-    }
-
+       
     public void RecordNPC (ActorSO actorSO)
     {
         spokenNPCs.Add(actorSO);

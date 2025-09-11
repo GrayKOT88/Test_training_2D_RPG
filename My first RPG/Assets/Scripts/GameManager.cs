@@ -4,6 +4,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public DialogueManager DialogueManager;
+    public DialogueHistoryTrecker DialogueHistoryTrecker;
+    public LocationHistoryTracker LocationHistoryTracker;
+
     [Header("Persitent Objects")]
     public GameObject[] persistentObjects;
 

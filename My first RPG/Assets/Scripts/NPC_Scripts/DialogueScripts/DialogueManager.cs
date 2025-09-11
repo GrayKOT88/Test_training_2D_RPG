@@ -1,11 +1,10 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public static DialogueManager instance;
-
     [Header("UI References")]
     public CanvasGroup canvasGroup;
     public Image portrait;
@@ -18,18 +17,22 @@ public class DialogueManager : MonoBehaviour
     private DialogueSO currentDialogue;
     private int dialogueIndex;
 
+    private float lastDialogueEndTime;
+    private float dialogueCooldown = 0.1f;
+
     private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(gameObject);
+    {        
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
 
         foreach (var button in choiceButtons)
             button.gameObject.SetActive(false);
+    }
+
+    public bool CanStartDialogue()
+    {
+        return Time.unscaledTime - lastDialogueEndTime >= dialogueCooldown;    
     }
 
     public void StartDialogue(DialogueSO dialogueSO)
@@ -52,7 +55,7 @@ public class DialogueManager : MonoBehaviour
     {
         DialogueLine line = currentDialogue.lines[dialogueIndex];
 
-        DialogueHistoryTrecker.Instance.RecordNPC(line.speaker);
+        GameManager.Instance.DialogueHistoryTrecker.RecordNPC(line.speaker);
 
         portrait.sprite = line.speaker.portrait;
         actorName.text = line.speaker.actorName;
@@ -88,6 +91,7 @@ public class DialogueManager : MonoBehaviour
             choiceButtons[0].onClick.AddListener(EndDialogue);
             choiceButtons[0].gameObject.SetActive(true);
         }
+        EventSystem.current.SetSelectedGameObject(choiceButtons[0].gameObject);
     }
 
     private void ChooseOption(DialogueSO dialogueSO)
@@ -110,6 +114,8 @@ public class DialogueManager : MonoBehaviour
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
+
+        lastDialogueEndTime = Time.unscaledTime;
     }
 
     private void CleaChoices()

@@ -175,6 +175,22 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 5950474744103740475, guid: 50d1082e6f960464d9766420a060cf46, type: 3}
+      propertyPath: DialogueManager
+      value: 
+      objectReference: {fileID: 1232564238}
+    - target: {fileID: 5950474744103740475, guid: 50d1082e6f960464d9766420a060cf46, type: 3}
+      propertyPath: DialogueHistoryTrecker
+      value: 
+      objectReference: {fileID: 1232564239}
+    - target: {fileID: 5950474744103740475, guid: 50d1082e6f960464d9766420a060cf46, type: 3}
+      propertyPath: LocationHistoryTracker
+      value: 
+      objectReference: {fileID: 1232564240}
+    - target: {fileID: 5950474744103740475, guid: 50d1082e6f960464d9766420a060cf46, type: 3}
+      propertyPath: persistentObjects.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950474744103740475, guid: 50d1082e6f960464d9766420a060cf46, type: 3}
       propertyPath: persistentObjects.Array.data[0]
       value: 
       objectReference: {fileID: 1308462974}
@@ -202,6 +218,10 @@ PrefabInstance:
       propertyPath: persistentObjects.Array.data[6]
       value: 
       objectReference: {fileID: 1787017332}
+    - target: {fileID: 5950474744103740475, guid: 50d1082e6f960464d9766420a060cf46, type: 3}
+      propertyPath: persistentObjects.Array.data[7]
+      value: 
+      objectReference: {fileID: 1232564232}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5899,12 +5919,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAnim: {fileID: 608789695}
   conversations:
-  - {fileID: 11400000, guid: e2219e6b15c825844ab50ce13c3b3734, type: 2}
   - {fileID: 11400000, guid: 5e9884faf8e5bc148bba334afd20bbb1, type: 2}
+  - {fileID: 11400000, guid: e2219e6b15c825844ab50ce13c3b3734, type: 2}
+  - {fileID: 11400000, guid: ecb63902378add14eb66d7849e3270aa, type: 2}
+  - {fileID: 11400000, guid: 2896b77c3e5b24d449f5b178a6d401f0, type: 2}
   - {fileID: 11400000, guid: f827ebc4b9b52c4468e70a1bc3744993, type: 2}
   - {fileID: 11400000, guid: 4e102a921217a7548a906a865c96bd91, type: 2}
-  - {fileID: 11400000, guid: 2896b77c3e5b24d449f5b178a6d401f0, type: 2}
-  - {fileID: 11400000, guid: ecb63902378add14eb66d7849e3270aa, type: 2}
+  - {fileID: 11400000, guid: 56b41c0154fb8c64c91070e37f06126e, type: 2}
   currentConversation: {fileID: 0}
 --- !u!114 &813677172
 MonoBehaviour:
@@ -27008,8 +27029,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAnim: {fileID: 779553865}
   conversations:
-  - {fileID: 11400000, guid: a8da55506fbef5e46b2009238a0b7bbc, type: 2}
   - {fileID: 11400000, guid: 4877bcc2903d1d943bb624ec1078342d, type: 2}
+  - {fileID: 11400000, guid: a8da55506fbef5e46b2009238a0b7bbc, type: 2}
   currentConversation: {fileID: 0}
 --- !u!114 &2099511647
 MonoBehaviour:

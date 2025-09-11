@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b74bc0fcaa2ebc4ca4151d4a5e64e0d, type: 3}
+  m_Name: PurpleBob_Quest_Bone and Stone_Complete
+  m_EditorClassIdentifier: 
+  lines:
+  - speaker: {fileID: 11400000, guid: 73df1ef1b987dc34abafa97ca6b76027, type: 2}
+    text: I see you've found my epic items. Please, be sure to use them.
+  options: []
+  requiredNPCs: []
+  requiredLocations: []
+  requiredItems:
+  - {fileID: 11400000, guid: 2941377d9a5acf2489b4a7245df34b74, type: 2}
+  - {fileID: 11400000, guid: dd930567a4c9aae4db2cc196bbe66421, type: 2}
+  removeAfterPlay: 1
+  removeTheseOnPlay:
+  - {fileID: 11400000, guid: e2219e6b15c825844ab50ce13c3b3734, type: 2}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b74bc0fcaa2ebc4ca4151d4a5e64e0d, type: 3}
-  m_Name: PurpleBob_Greeting
+  m_Name: PurpleBob_Quest_Brothers
   m_EditorClassIdentifier: 
   lines:
   - speaker: {fileID: 11400000, guid: 73df1ef1b987dc34abafa97ca6b76027, type: 2}

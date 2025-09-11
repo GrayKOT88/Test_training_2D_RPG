@@ -10,14 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3b74bc0fcaa2ebc4ca4151d4a5e64e0d, type: 3}
-  m_Name: PurpleBob_Found Bone and Stone
+  m_Name: Yellow_Quest_Blue_Complete
   m_EditorClassIdentifier: 
   lines:
-  - speaker: {fileID: 11400000, guid: 73df1ef1b987dc34abafa97ca6b76027, type: 2}
-    text: I see you've found my epic items. Please, be sure to use them.
+  - speaker: {fileID: 11400000, guid: 39cef94291b3a4b458fe1d6dd64b44c1, type: 2}
+    text: Hey, I'm Yellow Bob.
   options: []
-  requiredNPCs: []
-  requiredLocations: []
-  requiredItems:
-  - {fileID: 11400000, guid: 2941377d9a5acf2489b4a7245df34b74, type: 2}
-  - {fileID: 11400000, guid: dd930567a4c9aae4db2cc196bbe66421, type: 2}
+  requiredNPCs:
+  - {fileID: 11400000, guid: 84eab9b5f87021646964c4f8cc1b0193, type: 2}
