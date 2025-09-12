@@ -15,3 +15,4 @@ MonoBehaviour:
   questName: Test quest
   questDescription: Qest for test
   questLevel: 13
+  objectives: []
