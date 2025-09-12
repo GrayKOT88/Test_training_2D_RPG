@@ -22,6 +22,5 @@ public class QuestObjective
     public ActorSO targetNPC => target as ActorSO;
     public LocationSO targetLocation => target as LocationSO;
 
-    public int requiredAmount;
-    public int currentAmount;
+    public int requiredAmount;    
 }

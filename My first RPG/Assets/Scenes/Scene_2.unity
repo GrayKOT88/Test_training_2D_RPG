@@ -2461,6 +2461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4333f9676cef4f48ab0c65b0b722210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  questManager: {fileID: 1374806196}
 --- !u!95 &314926095 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 2397313191506204328, guid: 3ea979976361b5b4d8185f5aae2cdf9b, type: 3}
@@ -10313,6 +10314,7 @@ GameObject:
   - component: {fileID: 1374806194}
   - component: {fileID: 1374806193}
   - component: {fileID: 1374806192}
+  - component: {fileID: 1374806196}
   m_Layer: 5
   m_Name: QuestCanvas
   m_TagString: Untagged
@@ -10403,6 +10405,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1374806196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374806191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c91fb83b956faf4abcfd6de53f16409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1388795185
 GameObject:
   m_ObjectHideFlags: 0
