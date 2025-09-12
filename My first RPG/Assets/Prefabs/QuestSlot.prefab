@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3310255491803772227}
   - component: {fileID: 2302171589206446884}
   - component: {fileID: 4928525033952723781}
+  - component: {fileID: 232900812182179662}
   m_Layer: 5
   m_Name: QuestSlot
   m_TagString: Untagged
@@ -149,6 +150,21 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &232900812182179662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3792071202934597158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75b88ab3d148f342a1283416809d1d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questNameText: {fileID: 8142194814848654134}
+  questLevelText: {fileID: 1038295077001953829}
+  currentQuest: {fileID: 0}
 --- !u!1 &7134580208513420561
 GameObject:
   m_ObjectHideFlags: 0

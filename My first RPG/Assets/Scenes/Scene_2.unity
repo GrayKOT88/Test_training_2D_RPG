@@ -28670,6 +28670,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1646148344}
     m_Modifications:
+    - target: {fileID: 232900812182179662, guid: 17e8df50e4e988f4284b71f8db72795d, type: 3}
+      propertyPath: currentQuest
+      value: 
+      objectReference: {fileID: 11400000, guid: 6c28d1d378a15114aad09d7e35af3c68, type: 2}
     - target: {fileID: 3792071202934597158, guid: 17e8df50e4e988f4284b71f8db72795d, type: 3}
       propertyPath: m_Name
       value: QuestSlot
