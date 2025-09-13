@@ -15,4 +15,20 @@ MonoBehaviour:
   questName: Test quest
   questDescription: Qest for test
   questLevel: 13
-  objectives: []
+  objectives:
+  - description: Collect 3 Mushrooms
+    target: {fileID: 11400000, guid: 7a07da3ded30260459dc79b63acea680, type: 2}
+    requiredAmount: 3
+  - description: Visit The Hils
+    target: {fileID: 11400000, guid: 059a09387710c264aa9f816d20ba5d59, type: 2}
+    requiredAmount: 1
+  - description: Return to Blue Bob
+    target: {fileID: 11400000, guid: 84eab9b5f87021646964c4f8cc1b0193, type: 2}
+    requiredAmount: 1
+  rewards:
+  - itemSO: {fileID: 11400000, guid: 2941377d9a5acf2489b4a7245df34b74, type: 2}
+    quantity: 5
+  - itemSO: {fileID: 11400000, guid: be6d971c6799a334d8ad58634d002f10, type: 2}
+    quantity: 2
+  - itemSO: {fileID: 11400000, guid: dd930567a4c9aae4db2cc196bbe66421, type: 2}
+    quantity: 3

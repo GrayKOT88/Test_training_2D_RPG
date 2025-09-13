@@ -1,18 +1,65 @@
 using UnityEngine;
+using TMPro;
 
 public class QuestLogUI : MonoBehaviour
 {
-
     [SerializeField] private QuestManager questManager;
+
+    [SerializeField] private TMP_Text questNameText;
+    [SerializeField] private TMP_Text questDescriptionText;
+    [SerializeField] private QuestObjectiveSlot[] objectiveSlots;
+    [SerializeField] private QuestRewardSlot[] rewardSlots;
+
+    private QuestSO questSO;
 
     public void HandleQuestClicked(QuestSO questSO)
     {
-        Debug.Log($"===Clicked Quest: {questSO.questName}===");
+        this.questSO = questSO;
 
-        foreach (var objective  in questSO.objectives)
+        questNameText.text = questSO.questName;
+        questDescriptionText.text = questSO.questDescription;
+
+        DisplayObjectives();
+        DisplayRewards();
+    }
+
+    private void DisplayObjectives()
+    {
+        for (int i = 0; i < objectiveSlots.Length; i++)
         {
-            questManager.UpdateObjectiveProgress(questSO, objective);
-            Debug.Log($"Objective: {objective.description} => {questManager.GetProgressText(questSO, objective)}");
+            if(i < questSO.objectives.Count)
+            {
+                var objective = questSO.objectives[i];
+                questManager.UpdateObjectiveProgress(questSO, objective);
+
+                int currentAmount = questManager.GetCurrentAmount(questSO, objective);
+                string progress = questManager.GetProgressText(questSO, objective);
+                bool isComplete = currentAmount >= objective.requiredAmount;
+
+                objectiveSlots[i].gameObject.SetActive(true);
+                objectiveSlots[i].RefreshObjectives(objective.description, progress, isComplete);
+            }
+            else
+            {
+                objectiveSlots[i].gameObject.SetActive(false);
+            }
+        }
+    }
+
+    private void DisplayRewards()
+    {
+        for(int i = 0; i < rewardSlots.Length; i++)
+        {
+            if (i < questSO.rewards.Count)
+            {
+                var reward = questSO.rewards[i];
+                rewardSlots[i].DisplayReward(reward.itemSO.icon, reward.quantity);
+                rewardSlots[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                rewardSlots[i].gameObject.SetActive(false);
+            }
         }
     }
 }
