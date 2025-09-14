@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questName: Test quest
   questDescription: Qest for test
-  questLevel: 13
+  questLevel: 0
   objectives:
   - description: Collect 3 Mushrooms
     target: {fileID: 11400000, guid: 7a07da3ded30260459dc79b63acea680, type: 2}
