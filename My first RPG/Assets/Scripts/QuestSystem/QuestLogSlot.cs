@@ -9,7 +9,7 @@ public class QuestLogSlot : MonoBehaviour
     public QuestSO currentQuest;
 
     public QuestLogUI questLogUI;
-
+    
     private void OnValidate()
     {
         if (currentQuest != null)
@@ -26,6 +26,12 @@ public class QuestLogSlot : MonoBehaviour
         questLevelText.text = "Lv." + questSO.questLevel.ToString();
 
         gameObject.SetActive(true);
+    }
+
+    public void ClearSlot()
+    {
+        currentQuest = null;
+        gameObject.SetActive(false);
     }
 
     public void OnSlotClicked()
