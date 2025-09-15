@@ -37,7 +37,7 @@ public class QuestLogUI : MonoBehaviour
     #region Show Quest Methods
     public void ShowQuestOffer(QuestSO incomingQuestSO)
     {
-        if (questManager.IsQuestAccepted(incomingQuestSO))
+        if (questManager.IsQuestAccepted(incomingQuestSO) || questManager.GetCompleteQuest(incomingQuestSO))
         {
             questSO = noAvailableQuestSO;
             SetCanvasState(acceptCanvasGroup, false);
@@ -88,6 +88,8 @@ public class QuestLogUI : MonoBehaviour
         questManager.CompleteQuest(questSO);
 
         RefreshQuestList();
+        HandleQuestClicked(noAvailableQuestSO);
+        SetCanvasState(completeCanvasGroup, false);
     }
     #endregion
 

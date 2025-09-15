@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class InventoryManager : MonoBehaviour
     public TMP_Text goldText;
     public GameObject lootPrefab;
     public Transform player;
+
+    public static event Action<int> OnExperienceGained;
 
     private void Awake()
     {
@@ -50,6 +53,13 @@ public class InventoryManager : MonoBehaviour
             goldText.text = gold.ToString();
             return;
         }
+
+        if (itemSO.isEXP)
+        {
+            OnExperienceGained?.Invoke(quantity);
+            return;
+        }
+
         foreach (var slot in itemSlots)
         {
             if (slot.itemSO == itemSO && slot.quantity < itemSO.stackSize)

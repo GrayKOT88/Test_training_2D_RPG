@@ -4,6 +4,7 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     private Dictionary<QuestSO, Dictionary<QuestObjective, int>> questProgress = new();
+    private List<QuestSO> completeQuests = new();
 
     private void OnEnable()
     {
@@ -61,7 +62,16 @@ public class QuestManager : MonoBehaviour
     public void CompleteQuest(QuestSO questSO)
     {
         questProgress.Remove(questSO);
-        //Granting rewards
+        completeQuests.Add(questSO);
+        foreach (var reward in questSO.rewards)
+        {
+            InventoryManager.Instance.AddItem(reward.itemSO, reward.quantity);
+        }
+    }
+
+    public bool GetCompleteQuest(QuestSO questSO)
+    {
+        return completeQuests.Contains(questSO);
     }
     #endregion
 
@@ -75,7 +85,8 @@ public class QuestManager : MonoBehaviour
 
         if (objective.targetItem != null)
             newAmount = InventoryManager.Instance.GetItemQuantity(objective.targetItem);
-        else if (objective.targetItem != null && GameManager.Instance.LocationHistoryTracker.HasVisited(objective.targetLocation))
+
+        else if (objective.targetLocation != null && GameManager.Instance.LocationHistoryTracker.HasVisited(objective.targetLocation))
             newAmount = objective.requiredAmount;
 
         else if (objective.targetNPC != null && GameManager.Instance.DialogueHistoryTrecker.HasSpokenWith(objective.targetNPC))
