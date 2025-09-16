@@ -7,6 +7,15 @@ public class DialogueSO : ScriptableObject
     public DialogueLine[] lines;
     public DialogueOption[] options;
 
+    [Header("Quest Offer (Optional)")]
+    public QuestSO offerQuestOnEnd;
+
+    [Header("Complete Quest Requirements (Optional)")]
+    public QuestSO[] requiredCompletedQuests;
+
+    [Header("Quest Turn-In (Optional)")]
+    public QuestSO turnInQuestOnEnd;
+
     [Header("Conditional Requirements (Optional")]
     public ActorSO[] requiredNPCs;
     public LocationSO[] requiredLocations;
@@ -42,7 +51,16 @@ public class DialogueSO : ScriptableObject
                     return false;
             }
         }
-        
+        if (requiredCompletedQuests != null && requiredCompletedQuests.Length > 0)
+        {
+            foreach (var quest in requiredCompletedQuests)
+            {
+                if (!GameManager.Instance.QuestManager.IsQuestComplete(quest))
+                {
+                    return false;
+                }
+            }
+        }
         return true;
     }
 }
@@ -59,4 +77,5 @@ public class DialogueOption
 {
     public string optionText;
     public DialogueSO nextDialogue;
+    public QuestSO offerQuest;
 }

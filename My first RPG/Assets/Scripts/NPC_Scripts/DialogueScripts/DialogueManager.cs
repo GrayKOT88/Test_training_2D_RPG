@@ -84,14 +84,31 @@ public class DialogueManager : MonoBehaviour
 
                 choiceButtons[i].onClick.AddListener(() => ChooseOption(option.nextDialogue));
             }
+            EventSystem.current.SetSelectedGameObject(choiceButtons[0].gameObject);
         }
         else
         {
-            choiceButtons[0].GetComponentInChildren<TMP_Text>().text = "End";
-            choiceButtons[0].onClick.AddListener(EndDialogue);
-            choiceButtons[0].gameObject.SetActive(true);
+            if(currentDialogue.turnInQuestOnEnd != null &&
+                GameManager.Instance.QuestManager.IsQuestComplete(currentDialogue.turnInQuestOnEnd))
+            {
+                QuestEvents.OnquestTurnInRequested?.Invoke(currentDialogue.turnInQuestOnEnd);
+                EndDialogue();
+            }
+
+            else if (currentDialogue.offerQuestOnEnd != null)
+            {
+                EndDialogue();
+                QuestEvents.OnQuestOfferRequested?.Invoke(currentDialogue.offerQuestOnEnd);
+            }
+            else
+            {
+                choiceButtons[0].GetComponentInChildren<TMP_Text>().text = "End";
+                choiceButtons[0].onClick.AddListener(EndDialogue);
+                choiceButtons[0].gameObject.SetActive(true);
+
+                EventSystem.current.SetSelectedGameObject(choiceButtons[0].gameObject);
+            }
         }
-        EventSystem.current.SetSelectedGameObject(choiceButtons[0].gameObject);
     }
 
     private void ChooseOption(DialogueSO dialogueSO)

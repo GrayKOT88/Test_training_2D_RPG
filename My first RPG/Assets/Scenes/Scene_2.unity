@@ -251,6 +251,10 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
     - target: {fileID: 5950474744103740475, guid: 50d1082e6f960464d9766420a060cf46, type: 3}
+      propertyPath: QuestManager
+      value: 
+      objectReference: {fileID: 678499904}
+    - target: {fileID: 5950474744103740475, guid: 50d1082e6f960464d9766420a060cf46, type: 3}
       propertyPath: DialogueManager
       value: 
       objectReference: {fileID: 1232564238}
@@ -6390,6 +6394,17 @@ Transform:
   - {fileID: 2072459075}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &678499904 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3436611236034428769, guid: dfcaed048f17abf4783ccf11dc79c01a, type: 3}
+  m_PrefabInstance: {fileID: 1359596639}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c91fb83b956faf4abcfd6de53f16409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &680524359 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5911488893695828092, guid: 17238c22dcfa34848b8ec858c299e267, type: 3}
@@ -12585,6 +12600,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2998031040652880494, guid: dfcaed048f17abf4783ccf11dc79c01a, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 314926098}
     - target: {fileID: 3059019975936941898, guid: dfcaed048f17abf4783ccf11dc79c01a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

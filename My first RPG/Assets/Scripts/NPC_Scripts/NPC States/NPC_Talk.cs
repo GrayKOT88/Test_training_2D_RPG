@@ -16,6 +16,16 @@ public class NPC_Talk : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
     }
 
+    private void Start()
+    {
+        QuestEvents.OnQuestAccepted += OnQuestAccepted_RemoveOfferings;
+    }
+
+    private void OnDestroy()
+    {
+        QuestEvents.OnQuestAccepted -= OnQuestAccepted_RemoveOfferings;
+    }
+
     private void OnEnable()
     {
         rb.velocity = Vector2.zero;
@@ -49,28 +59,41 @@ public class NPC_Talk : MonoBehaviour
 
     private void CheckForNewConversation()
     {
-        for(int i = 0; i < conversations.Count; i++)
+        for (int i = 0; i < conversations.Count; i++)
         {
             var convo = conversations[i];
-            if(convo != null && convo.IsConditionMet())
+            if (convo != null && convo.IsConditionMet())
             {
                 currentConversation = convo;
 
                 //Remove this if it's one-time only
-                if(convo.removeAfterPlay)                    
+                if (convo.removeAfterPlay)
                     conversations.RemoveAt(i);
 
                 //Remove any other dialogues that should be cleared when this one plays (like quest completion)
-                if(convo.removeTheseOnPlay != null && convo.removeTheseOnPlay.Count > 0)
+                if (convo.removeTheseOnPlay != null && convo.removeTheseOnPlay.Count > 0)
                 {
                     foreach (var toRemove in convo.removeTheseOnPlay)
                     {
                         conversations.Remove(toRemove);
                     }
                 }
-                
+
                 break;
             }
+        }
+    }
+
+    private void OnQuestAccepted_RemoveOfferings(QuestSO acceptedQuest)
+    {
+        for(int i = conversations.Count - 1; i >= 0; i--)
+        {
+            var convo = conversations[i];
+            if (convo == null)
+                continue;
+
+            if (convo.offerQuestOnEnd == acceptedQuest)
+                conversations.RemoveAt(i);
         }
     }
 }

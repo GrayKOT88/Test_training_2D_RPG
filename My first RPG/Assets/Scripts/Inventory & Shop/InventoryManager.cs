@@ -88,6 +88,31 @@ public class InventoryManager : MonoBehaviour
             DropLoot(itemSO, quantity);
     }
 
+    public void RemoveItem(ItemSO itemSO,int quantity)
+    {
+        for (int i = 0; i < itemSlots.Length; i++)
+        {
+            var slot = itemSlots[i];
+
+            if (slot.itemSO != itemSO)
+                continue;
+
+            if(slot.quantity > quantity)
+            {
+                slot.quantity -= quantity;
+                slot.UpdateUI();
+                quantity = 0;
+            }
+            else
+            {
+                quantity -= slot.quantity;
+                slot.itemSO = null;
+                slot.quantity = 0;
+                slot.UpdateUI();
+            }
+        }
+    }
+
     public void DropItem(InventorySlot slot)
     {
         DropLoot(slot.itemSO, 1);
@@ -135,7 +160,7 @@ public class InventoryManager : MonoBehaviour
 
         foreach (var slot in itemSlots)
         {
-            if(slot.itemSO = itemSO)
+            if(slot.itemSO == itemSO)
                 total += slot.quantity;
         }
         return total;

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class UIManager : MonoBehaviour
 {
@@ -32,6 +33,8 @@ public class UIManager : MonoBehaviour
         SetMenuState(statsMenu, false);
         SetMenuState(skillsMenu, false);
         SetMenuState(questsMenu, false);
+
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     private void SetMenuState(CanvasGroup group, bool isActive)
