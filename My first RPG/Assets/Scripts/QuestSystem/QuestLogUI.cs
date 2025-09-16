@@ -74,6 +74,7 @@ public class QuestLogUI : MonoBehaviour
         questManager.AcceptQuest(questSO);
         SetCanvasState(completeCanvasGroup, false);
         SetCanvasState(acceptCanvasGroup, false);
+        SetCanvasState(declineCanvasGroup,false);
         RefreshQuestList();
         HandleQuestClicked(noAvailableQuestSO);
     }
